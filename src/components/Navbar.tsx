@@ -1,8 +1,9 @@
 'use client'
 import { useState } from 'react'
 import { RiMoonFill, RiSunLine } from 'react-icons/ri'
-import { useTheme } from 'next-themes'
 import { IoMdMenu, IoMdClose } from 'react-icons/io'
+import { useTheme } from 'next-themes'
+import Link from 'next/link'
 
 interface NavItem {
   label: string
@@ -17,29 +18,52 @@ const NavItems: Array<NavItem> = [
 
 function Navbar() {
   const { systemTheme, theme, setTheme } = useTheme()
-  const currentTheme = theme === 'system' ? systemTheme : theme
+  const currentTheme = theme === 'systemt' ? systemTheme : theme
+  // const [theme, setTheme] = useState('light')
   console.log(theme)
   const [navbar, setNavbar] = useState(false)
 
+  const toggleNavbar = () => {}
+
   return (
-    <header className='w-full mx-auto px-4 bg-white shadow fixed top-0 z-50 dark:bg-stone-900 dark:border-b dark:border-stone-600'>
-      <div className='justify-between md:items-center md:flex'>
+    <header className='w-full mx-auto shadow fixed top-0 z-50 px-10 md:px-4'>
+      <div className='justify-between py-4 md:items-center md:flex'>
         <div>
-          <div className='md:py-5 md:block'>
-            <h2 className='test-2xl font-bold dark:text-white'>Chao, Long</h2>
+          <div className='flex items-center justify-between text-2xl'>
+            <div>
+              <h2 className='font-bold'>Chao, Long</h2>
+            </div>
+            <div className='md:hidden'>
+              <button onClick={() => setNavbar(!navbar)}>
+                {navbar ? <IoMdClose /> : <IoMdMenu />}
+              </button>
+            </div>
           </div>
         </div>
-        <div className='md:flex md:space-x-6 dark:text-white'>
-          {NavItems.map((item, idx) => {
-            return <a key={idx}>{item.label}</a>
-          })}
-          <button
-            onClick={() =>
-              setTheme(`${currentTheme === 'dark' ? 'light' : 'dark'}`)
-            }
-          >
-            {currentTheme === 'dark' ? <RiSunLine /> : <RiMoonFill />}
-          </button>
+        <div className={`md:block ${!navbar && 'hidden'}`}>
+          <div className='gap-14 text-end space-y-4 pt-2 md:space-y-0 md:flex items-center justify-center'>
+            {NavItems.map((item, idx) => {
+              return (
+                <Link
+                  href={item.page}
+                  key={idx}
+                  className='hover:text-neutral-500  block lg:inline-block'
+                >
+                  {item.label}
+                </Link>
+              )
+            })}
+            <button
+              className={`text-2xl  p-1 ${
+                theme !== 'dark'
+                  ? 'bg-black text-white rounded-3xl '
+                  : 'text-amber-500'
+              } `}
+              onClick={() => setTheme(`${theme === 'dark' ? 'light' : 'dark'}`)}
+            >
+              {theme === 'dark' ? <RiSunLine /> : <RiMoonFill />}
+            </button>
+          </div>
         </div>
       </div>
     </header>
