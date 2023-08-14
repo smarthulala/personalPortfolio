@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { RiMoonFill, RiSunLine } from 'react-icons/ri'
 import { IoMdMenu, IoMdClose } from 'react-icons/io'
 import { useTheme } from 'next-themes'
@@ -18,15 +18,25 @@ const NavItems: Array<NavItem> = [
 
 function Navbar() {
   const { systemTheme, theme, setTheme } = useTheme()
-  const currentTheme = theme === 'systemt' ? systemTheme : theme
-  // const [theme, setTheme] = useState('light')
+  const currentTheme = theme === 'system' ? systemTheme : theme
   console.log(theme)
   const [navbar, setNavbar] = useState(false)
 
-  const toggleNavbar = () => {}
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme')
+    if (savedTheme) {
+      setTheme(savedTheme)
+    } else if (currentTheme === 'dark') {
+      setTheme('dark')
+    }
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem('theme', currentTheme)
+  }, [currentTheme])
 
   return (
-    <header className='w-full mx-auto shadow fixed top-0 z-50 px-10 md:px-4'>
+    <header className={`w-full mx-auto shadow fixed top-0 z-50 px-10 md:px-4 `}>
       <div className='justify-between py-4 md:items-center md:flex'>
         <div>
           <div className='flex items-center justify-between text-2xl'>
@@ -40,7 +50,11 @@ function Navbar() {
             </div>
           </div>
         </div>
-        <div className={`md:block ${!navbar && 'hidden'}`}>
+        <div
+          className={`md:block transition-all transform duration-300 ${
+            !navbar && 'hidden'
+          }`}
+        >
           <div className='gap-14 text-end space-y-4 pt-2 md:space-y-0 md:flex items-center justify-center'>
             {NavItems.map((item, idx) => {
               return (
