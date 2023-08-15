@@ -4,17 +4,7 @@ import { RiMoonFill, RiSunLine } from 'react-icons/ri'
 import { IoMdMenu, IoMdClose } from 'react-icons/io'
 import { useTheme } from 'next-themes'
 import Link from 'next/link'
-
-interface NavItem {
-  label: string
-  page: string
-}
-
-const NavItems: Array<NavItem> = [
-  { label: 'Home', page: 'home' },
-  { label: 'About', page: 'about' },
-  { label: 'Projects', page: 'projects' },
-]
+import { NavItems } from './Data'
 
 export default function Navbar() {
   const { systemTheme, theme, setTheme } = useTheme()

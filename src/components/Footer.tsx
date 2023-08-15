@@ -15,13 +15,21 @@ const Footer = () => {
           © 2023 Chao Long<a href='/' className='hover:underline'></a>
         </div>
         <div className='flex flex-row items-center justify-center gap-2 mb-2'>
-          <a href='/' rel='noreferrer' target='_blank'>
+          <a
+            href='https://github.com/smarthulala'
+            rel='noreferrer'
+            target='_blank'
+          >
             <AiOutlineGithub
               className='hover:-translate-y-1 transition-transform cursor-pointer dark:text-neutral-100'
               size={30}
             />
           </a>
-          <a href='/' rel='noreferrer' target='_blank'>
+          <a
+            href='https://www.linkedin.com/in/chao-long-mel'
+            rel='noreferrer'
+            target='_blank'
+          >
             <AiOutlineLinkedin
               className='hover:-translate-y-1 transition-transform cursor-pointer dark:text-neutral-100'
               size={30}

@@ -10,18 +10,6 @@ export default function About() {
       ? skills
       : skills.filter((skill) => skill.category === selectedCategory)
 
-  console.log(selectedCategory)
-  console.log(filteredSkills)
-
-  const getRandomColor = () => {
-    const letters = '0123456789ABCDEF'
-    let color = '#'
-    for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)]
-    }
-    return color
-  }
-
   return (
     <div className='md:flex justify-center mb-10 w-screen gap-4 md:px-24 px-4'>
       <div className='md:w-1/3 text-center md:text-left'>
@@ -58,8 +46,7 @@ export default function About() {
           {filteredSkills.map((skill, index) => (
             <div
               key={index}
-              className='bg-gray-400 rounded hover:scale-105 duration-300 text-center p-2'
-              style={{ color: getRandomColor() }}
+              className='bg-amber-500 rounded hover:scale-105 duration-300 text-center p-2'
             >
               {skill.title}
             </div>
