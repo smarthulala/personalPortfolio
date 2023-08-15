@@ -43,7 +43,7 @@ export default function Navbar() {
                 <Link
                   href={item.page}
                   key={idx}
-                  className='hover:text-neutral-500  block'
+                  className='hover:text-neutral-500 hover:scale-105 block'
                 >
                   {item.label}
                 </Link>
