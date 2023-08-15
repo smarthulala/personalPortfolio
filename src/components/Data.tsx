@@ -42,9 +42,9 @@ export const skills = [
 ]
 
 export const skillCategories = [
-  { label: 'All', className: 'button' },
-  { label: 'Frontend', className: 'button' },
-  { label: 'Backend', className: 'button' },
-  { label: 'Other', className: 'button' },
-  { label: 'Soft Skills', className: 'button' },
+  { label: 'All' },
+  { label: 'Frontend' },
+  { label: 'Backend' },
+  { label: 'Other' },
+  { label: 'Soft Skills' },
 ]
