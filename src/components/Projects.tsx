@@ -19,7 +19,7 @@ const Projects = () => {
                     alt={project.description}
                     width={1000}
                     height={1000}
-                    className='rounded-xl shadow-xl dark:md:shadow-amber-500/50 hover:opacity-70'
+                    className='rounded-xl shadow-xl dark:md:shadow-gray-500/50 hover:opacity-70'
                   />
                 </Link>
               </div>
@@ -42,14 +42,16 @@ const Projects = () => {
                     />
                   </Link>
                 </div>
-                <div>
-                  Highlights:
-                  {project.stack &&
-                    project.stack.map((item, index) => (
-                      <ul key={index} className='text-sm my-2'>
-                        {item.title}
-                      </ul>
-                    ))}
+                Highlights:
+                <div className='flex flex-wrap justify-center md:justify-start gap-2 mt-4'>
+                  {project.stack.map((item, index) => (
+                    <div
+                      key={index}
+                      className='bg-gray-500 rounded hover:scale-105 duration-300 text-center p-2'
+                    >
+                      {item.title}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
