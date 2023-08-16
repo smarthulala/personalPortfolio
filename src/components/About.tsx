@@ -11,7 +11,7 @@ export default function About() {
       : skills.filter((skill) => skill.category === selectedCategory)
 
   return (
-    <div className='md:flex justify-center mb-10 w-screen gap-4 md:px-24 px-4'>
+    <div id='about' className='md:flex justify-center mb-10 w-screen gap-4 md:px-24 px-4'>
       <div className='md:w-1/3 text-center md:text-left'>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut ad rerum
         illum, atque ipsa similique blanditiis. Laudantium, repellendus

@@ -51,14 +51,15 @@ export const skillCategories = [
 
 interface NavItem {
   label: string
-  page: string
+  target: string
 }
 
 export const NavItems: Array<NavItem> = [
-  { label: 'Home', page: '' },
-  { label: 'About', page: 'about' },
-  { label: 'Projects', page: 'projects' },
+  { label: 'Home', target: 'home' },
+  { label: 'About', target: 'about' },
+  { label: 'Projects', target: 'projects' },
 ]
+
 
 export const getRandomColor = () => {
   const letters = '0123456789ABCDEF'
@@ -68,3 +69,37 @@ export const getRandomColor = () => {
   }
   return color
 }
+
+export const projects = [
+  {
+    name: 'CrankBit, Automotive SaaS Platform',
+    description:
+      'Boosting automotive mechanics efficiency, this website aids in creating streamlined repair forms, optimizing processes for enhanced workflow, and overall productivity improvement.',
+    image: '/Crankbit.jpg',
+    github: 'https://github.com/CRANKBIT',
+    link: 'https://github.com/CRANKBIT',
+    stack: [
+      { title: 'Agile development environment' },
+      { title: 'problem-solving' },
+      { title: 'Used Redux Toolkit Query to fetch data' },
+      { title: 'Collaborative web page UI design' },
+      { title: 'React, Tailwind and TypeScript' },
+      { title: 'MongoDb, Mongoose' },
+      { title: 'Created the database schema, model, controller' },
+      { title: 'Reviewd and made changes upon pull requests on git' },
+      { title: 'Jira and GitHub' },
+    ],
+  },
+  {
+    name: 'Hoopla Party Planning',
+    description: 'A showcase website displays customer`s photo gallery.',
+    image: '/HooplaParty.jpg',
+    github: 'https://github.com/FreshByte-Genesis/ZenFrame',
+    link: 'https://github.com/FreshByte-Genesis/ZenFrame',
+    stack: [
+      { title: 'Collaborative web page UI design' },
+      { title: 'React, Tailwind and TypeScript' },
+      { title: 'Next.js' },
+    ],
+  },
+]

@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { HiArrowDown } from 'react-icons/hi'
+import { handleClickScroll } from './Navbar'
 
 export default function Hero() {
   return (
@@ -40,7 +41,12 @@ export default function Hero() {
         </div>
       </div>
       <div className='flex flex-row justify-center my-20'>
-        <HiArrowDown className='cursor-pointer text-4xl animate-bounce' />
+        <HiArrowDown
+          className='cursor-pointer text-4xl animate-bounce'
+          onClick={(event: any) => {
+            handleClickScroll(event, 'about')
+          }}
+        />
       </div>
     </div>
   )

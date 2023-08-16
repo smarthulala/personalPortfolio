@@ -6,6 +6,15 @@ import { useTheme } from 'next-themes'
 import Link from 'next/link'
 import { NavItems } from './Data'
 
+export const handleClickScroll = (event: any, targetId: string) => {
+  event.preventDefault()
+  const targetSection = document.getElementById(targetId)
+
+  if (targetSection) {
+    targetSection.scrollIntoView({ behavior: 'smooth' })
+  }
+}
+
 export default function Navbar() {
   const { systemTheme, theme, setTheme } = useTheme()
   const currentTheme = theme === 'system' ? systemTheme : theme
@@ -30,13 +39,13 @@ export default function Navbar() {
           <div className='gap-14 text-end space-y-4 pt-2 md:space-y-0 md:flex items-center justify-center'>
             {NavItems.map((item, idx) => {
               return (
-                <Link
-                  href={item.page}
+                <div
                   key={idx}
-                  className='hover:text-neutral-500 hover:scale-105 block'
+                  className='hover:text-neutral-500 hover:scale-105 block cursor-pointer'
+                  onClick={(event) => handleClickScroll(event, item.target)}
                 >
                   {item.label}
-                </Link>
+                </div>
               )
             })}
             <button
