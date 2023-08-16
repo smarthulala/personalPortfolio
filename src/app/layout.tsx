@@ -13,9 +13,11 @@ export default function RootLayout({
     <html lang='en' suppressHydrationWarning>
       <body>
         <ThemeProvider attribute='class' enableSystem={true}>
-          <Navbar />
-          {children}
-          <Footer />
+          <div className='flex flex-col gap-40'>
+            <Navbar />
+            {children}
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>

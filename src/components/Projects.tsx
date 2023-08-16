@@ -16,7 +16,7 @@ const Projects = () => {
                 <Link href={project.link}>
                   <Image
                     src={project.image}
-                    alt=''
+                    alt={project.description}
                     width={1000}
                     height={1000}
                     className='rounded-xl shadow-xl dark:md:shadow-amber-500/50 hover:opacity-70'

@@ -52,14 +52,28 @@ export const skillCategories = [
 interface NavItem {
   label: string
   target: string
+  link?: string
 }
 
 export const NavItems: Array<NavItem> = [
-  { label: 'Home', target: 'home' },
+  { label: 'Home', target: 'home', link: '/' },
   { label: 'About', target: 'about' },
   { label: 'Projects', target: 'projects' },
 ]
 
+export const NavButtons = [
+  { label: 'Login', link: 'login' },
+  { label: 'Signup', link: 'signup' },
+]
+
+export const handleClickScroll = (event: any, targetId: string) => {
+  event.preventDefault()
+  const targetSection = document.getElementById(targetId)
+
+  if (targetSection) {
+    targetSection.scrollIntoView({ behavior: 'smooth' })
+  }
+}
 
 export const getRandomColor = () => {
   const letters = '0123456789ABCDEF'
@@ -100,6 +114,23 @@ export const projects = [
       { title: 'Collaborative web page UI design' },
       { title: 'React, Tailwind and TypeScript' },
       { title: 'Next.js' },
+    ],
+  },
+  {
+    name: 'Authentication',
+    description:
+      'A Next.js application focused on authentication features. It uses a combination of technologies like Next.js for server-rendered React applications, various libraries for handling authentication-related tasks, and TypeScript for type-safe JavaScript development.',
+    image: '/Authentication.jpg',
+    github: 'https://github.com/smarthulala/nextjs-authentication',
+    link: 'https://github.com/smarthulala/nextjs-authentication',
+    stack: [
+      { title: 'axios' },
+      { title: 'Bcryptjs' },
+      { title: 'Next.js' },
+      { title: 'Jsonwebtoken' },
+      { title: 'MongoDb, Mongoose' },
+      { title: 'Tailwindcss' },
+      { title: 'Nodemailer' },
     ],
   },
 ]

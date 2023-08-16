@@ -2,11 +2,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { HiArrowDown } from 'react-icons/hi'
-import { handleClickScroll } from './Navbar'
+import { handleClickScroll } from './Data'
 
 export default function Hero() {
   return (
-    <div className='mt-40 md:mt-60 px-6'>
+    <div className='mt-40 md:mt-60 px-6' id='home'>
       <div className='flex flex-col items-center justify-center gap-1 text-center md:text-left md:flex-row xl:w-[1200px]'>
         <Image
           className='rounded-full shadow-2xl hover:scale-105 duration-300'
