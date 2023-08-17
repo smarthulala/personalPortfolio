@@ -18,11 +18,12 @@ export default function Hero() {
         />
         <div className='md:px-24 flex flex-col gap-6 items-center md:items-start'>
           <div className='text-3xl md:text-6xl font-bold my-6'>
-            Hi, I'm Chao
+            Hi, I&apos;m Chao
           </div>
           <div>
-            I'm a skilled{' '}
+            I&apos;m a skilled
             <span className='text-amber-600'>
+              {' '}
               Frontend and Full Stack developer{' '}
             </span>
             based in Melbourne, passionate about crafting exceptional web

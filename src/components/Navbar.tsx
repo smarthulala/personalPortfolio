@@ -11,10 +11,6 @@ export default function Navbar() {
   const currentTheme = theme === 'system' ? systemTheme : theme
   const [navbar, setNavbar] = useState(false)
 
-  const isLoginOrSignup =
-    window.location.pathname === '/login' ||
-    window.location.pathname === '/signup'
-
   return (
     <div
       className={`w-full mb-20 mx-auto shadow fixed top-0 z-50 px-10 md:px-4 bg-white dark:bg-black dark:border-b dark:border-slate-500`}
@@ -32,23 +28,21 @@ export default function Navbar() {
           }`}
         >
           <div className='gap-14 text-end space-y-4 pt-2 md:space-y-0 md:flex items-center justify-center'>
-            {!isLoginOrSignup
-              ? NavItems.map((item, idx) => {
-                  return (
-                    <div
-                      key={idx}
-                      className='hover:text-neutral-500 hover:scale-105 duration-300 block cursor-pointer'
-                      onClick={(event) => handleClickScroll(event, item.target)}
-                    >
-                      {item.link ? (
-                        <Link href={item.link}>{item.label}</Link>
-                      ) : (
-                        item.label
-                      )}
-                    </div>
-                  )
-                })
-              : null}
+            {NavItems.map((item, idx) => {
+              return (
+                <div
+                  key={idx}
+                  className='hover:text-neutral-500 hover:scale-105 duration-300 block cursor-pointer'
+                  onClick={(event) => handleClickScroll(event, item.target)}
+                >
+                  {item.link ? (
+                    <Link href={item.link}>{item.label}</Link>
+                  ) : (
+                    item.label
+                  )}
+                </div>
+              )
+            })}
             {/* <div className='flex gap-4 justify-end'>
               {!isLoginOrSignup
                 ? NavButtons.map((button, idx) => {
