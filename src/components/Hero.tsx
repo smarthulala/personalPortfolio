@@ -33,12 +33,14 @@ export default function Hero() {
             in backend development, allows me to seamlessly bridge the gap
             between design and functionality.
           </div>
-          <Link
-            href='project'
+          <div
+            onClick={(event: any) => {
+              handleClickScroll(event, 'projects')
+            }}
             className='p-2 bg-amber-500 text-white rounded hover:scale-105 duration-300 hover:bg-amber-400 w-20 text-center'
           >
             Projects
-          </Link>
+          </div>
         </div>
       </div>
       <div className='flex flex-row justify-center my-20'>
