@@ -43,21 +43,19 @@ export default function Navbar() {
                 </div>
               )
             })}
-            {/* <div className='flex gap-4 justify-end'>
-              {!isLoginOrSignup
-                ? NavButtons.map((button, idx) => {
-                    return (
-                      <Link
-                        href={button.link}
-                        key={idx}
-                        className='bg-amber-500 p-1 rounded hover:scale-105 duration-300'
-                      >
-                        {button.label}
-                      </Link>
-                    )
-                  })
-                : ''}
-            </div> */}
+            <div className='flex gap-4 justify-end'>
+              {NavButtons.map((button, idx) => {
+                return (
+                  <Link
+                    href={button.link}
+                    key={idx}
+                    className='bg-amber-500 p-1 rounded hover:scale-105 duration-300'
+                  >
+                    {button.label}
+                  </Link>
+                )
+              })}
+            </div>
             <button
               className={`rounded-3xl px-2 ${
                 currentTheme !== 'dark'
