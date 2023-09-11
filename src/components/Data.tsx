@@ -63,7 +63,7 @@ export const NavItems: Array<NavItem> = [
 
 export const NavButtons = [
   { label: 'Login', link: 'login' },
-  { label: 'Signup', link: 'signup' },
+  { label: 'Sign up', link: 'signup' },
 ]
 
 export const handleClickScroll = (event: any, targetId: string) => {
