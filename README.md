@@ -1,6 +1,6 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 https://personal-portfolio-github-io-virid.vercel.app/
-## Getting Start
+## Getting Started
  run the development server:
 
 ```bash
